@@ -1,0 +1,91 @@
+---
+import doorkeeper from "../assets/doorkeeper.png";
+
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Layout from "../layouts/default.astro";
+import Section from "../components/Section.astro";
+import LinkButton from "../components/LinkButton.astro";
+
+const entris = await getCollection("blog");
+---
+
+<Layout title="CoderDojo磐梯" description="CoderDojo磐梯のサイト">
+	<h1 class="hidden">CoderDojo Bandai</h1>
+	<Section>
+		<h2 slot="title" id="about" class="pt-20 -mt-20">CoderDojoについて</h2>
+		<div>
+			<h3 class="text-2xl">CoderDojoとは</h3>
+			<p>
+				CoderDojoは、7~17歳を対象にした非営利のプログラミング道場です。
+				日本ではCoderDojo Japanが各地のDojoを取りまとめています。
+				参加者をNinja(ニンジャ)、サポート役のボランティアをMentor(メンター)と呼びます。
+			</p>
+		</div>
+		<div>
+			<h3 class="text-2xl">CoderDojo Bandaiとは</h3>
+			<p>
+				CoderDojo
+				Bandaiは、磐梯町のまなびときばんだいで毎月第1土曜日に開催します。
+				会津大生が中心となって活動しています。
+			</p>
+		</div>
+	</Section>
+	<Section>
+		<h2 slot="title" id="join" class="pt-20 -mt-20">参加申し込み</h2>
+		<p>参加申し込みはDoorkeeperで受付けています。</p>
+		<div class="border-2 border-neutral-200 rounded-sm">
+			<Image src={doorkeeper} alt="doorkeeperの画像" />
+		</div>
+		<div class="flex flex-col items-center">
+			<LinkButton
+				href="https://coderdojo-aizu.doorkeeper.jp/events/166246"
+			>
+				参加する
+			</LinkButton>
+		</div>
+	</Section>
+	<Section>
+		<h2 slot="title" id="blog" class="pt-20 -mt-20">活動の様子</h2>
+		<div class="flex flex-col">
+			{
+				entris
+					.sort(
+						(entryA, entryB) =>
+							entryB.data.date.getTime() -
+							entryA.data.date.getTime(),
+					)
+					.slice(0, 5)
+					.map((entry) => (
+						<a
+							href={`/blog/${entry.slug}`}
+							class="py-4 flex gap-4 border-b-2 last:border-b-0 border-neutral-200"
+						>
+							<div class="w-1/4">
+								<Image
+									src={entry.data.cover}
+									alt="ブログのカバー画像"
+								/>
+							</div>
+							<div class="w-3/4 flex flex-col justify-between">
+								<div>
+									<div>{entry.data.title}</div>
+									<div>{entry.data.summary}</div>
+								</div>
+								<div class="text-right">
+									<div>
+										{new Date(
+											entry.data.date,
+										).toLocaleDateString("ja")}
+									</div>
+								</div>
+							</div>
+						</a>
+					))
+			}
+		</div>
+		<div class="flex flex-col items-center">
+			<LinkButton href="/blog">もっと見る</LinkButton>
+		</div>
+	</Section>
+</Layout>

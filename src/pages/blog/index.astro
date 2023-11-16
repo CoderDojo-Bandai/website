@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+import Layout from "../../layouts/default.astro";
+import Section from "../../components/Section.astro";
+
+const entris = await getCollection("blog");
+---
+
+<Layout title="活動の様子 | CoderDojo磐梯" description="CoderDojo磐梯の様子">
+    <Section>
+        <div class="flex flex-col">
+            {
+                entris
+                    .sort(
+                        (entryA, entryB) =>
+                            entryB.data.date.getTime() -
+                            entryA.data.date.getTime(),
+                    )
+                    .map((entry) => (
+                        <a
+                            href={`/blog/${entry.slug}`}
+                            class="py-4 flex gap-4 border-b-2 last:border-b-0 border-neutral-200"
+                        >
+                            <div class="w-1/4">
+                                <Image
+                                    src={entry.data.cover}
+                                    alt="ブログのカバー画像"
+                                />
+                            </div>
+                            <div class="w-3/4 flex flex-col justify-between">
+                                <div>
+                                    <div>{entry.data.title}</div>
+                                    <div>{entry.data.summary}</div>
+                                </div>
+                                <div class="text-right">
+                                    <div>
+                                        {new Date(
+                                            entry.data.date,
+                                        ).toLocaleDateString("ja")}
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    ))
+            }
+        </div>
+    </Section>
+</Layout>

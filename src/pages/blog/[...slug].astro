@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/default.astro";
+
+export async function getStaticPaths() {
+    const entries = await getCollection("blog");
+
+    return entries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout
+    title={`${entry.data.title} | CoderDojo磐梯の様子`}
+    description={entry.data.summary}
+>
+    <div class="prose p-4 w-full max-w-2xl">
+        <Content />
+    </div>
+</Layout>
