@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="169.577mm"
+   height="36.479mm"
+   viewBox="0 0 169.577 36.479"
    version="1.1"
    id="svg1"
    xml:space="preserve"
@@ -24,8 +24,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.65834035"
-     inkscape:cx="396.45147"
-     inkscape:cy="240.75693"
+     inkscape:cx="350.88234"
+     inkscape:cy="357.71771"
      inkscape:window-width="1920"
      inkscape:window-height="974"
      inkscape:window-x="-11"
@@ -33,15 +33,15 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" /><defs
      id="defs1"><rect
-       x="215.6939"
+       x="215.69389"
        y="239.99744"
-       width="498.22254"
+       width="498.22253"
        height="112.40387"
        id="rect5" /><rect
-       x="273.41481"
-       y="267.33892"
+       x="273.41479"
+       y="267.33893"
        width="121.51769"
-       height="44.050164"
+       height="44.050163"
        id="rect4" /><linearGradient
        id="swatch8"
        inkscape:swatch="solid"><stop
@@ -50,13 +50,14 @@
          id="stop8" /></linearGradient></defs><g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"><text
+     id="layer1"
+     transform="translate(-1.0406903,-1.2428213)"><text
        xml:space="preserve"
        transform="scale(0.26458333)"
        id="text4"
-       style="fill:#000000;stroke-width:1.61007874;stroke-dasharray:none;white-space:pre;shape-inside:url(#rect4)" /><g
+       style="white-space:pre;shape-inside:url(#rect4);display:inline;fill:#000000;stroke-width:1.61008;stroke-dasharray:none" /><g
        id="g5"
-       transform="translate(-18.08525,-59.480379)"><g
+       transform="translate(-14.381081,-57.363711)"><g
          id="g4"
          transform="matrix(0.40390027,0,0,0.40387079,19.025081,60.622347)"
          style="stroke-width:1.00057;stroke-dasharray:none"><g
@@ -89,7 +90,7 @@
          xml:space="preserve"
          transform="matrix(0.29091563,0,0,0.7006007,-6.9368969,-105.98454)"
          id="text5"
-         style="white-space:pre;shape-inside:url(#rect5);fill:#000000;stroke-width:1.61008;stroke-dasharray:none"><tspan
+         style="white-space:pre;shape-inside:url(#rect5);display:inline;fill:#000000;stroke-width:1.61008;stroke-dasharray:none"><tspan
            x="215.69336"
            y="275.48441"
            id="tspan2"><tspan
