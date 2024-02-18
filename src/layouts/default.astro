@@ -32,7 +32,9 @@ const { title, description } = Astro.props;
                 <Navigation />
             </div>
         </div>
-        <slot />
+        <div class="my-4">
+            <slot />
+        </div>
         <Footer />
     </body>
 </html>
