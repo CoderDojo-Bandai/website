@@ -13,7 +13,9 @@ const entris = await getCollection("blog");
 <Layout title="CoderDojo磐梯" description="CoderDojo磐梯のサイト">
 	<h1 class="hidden">CoderDojo Bandai</h1>
 	<Section>
-		<h2 slot="title" id="about" class="pt-20 -mt-20 relative -z-50">CoderDojoについて</h2>
+		<h2 slot="title" id="about" class="pt-20 -mt-20 relative -z-50">
+			CoderDojoについて
+		</h2>
 		<div>
 			<h3 class="text-2xl">CoderDojoとは</h3>
 			<p>
@@ -32,7 +34,9 @@ const entris = await getCollection("blog");
 		</div>
 	</Section>
 	<Section>
-		<h2 slot="title" id="join" class="pt-20 -mt-20 relative -z-50">参加申し込み</h2>
+		<h2 slot="title" id="join" class="pt-20 -mt-20 relative -z-50">
+			参加申し込み
+		</h2>
 		<p>参加申し込みはDoorkeeperで受付けています。</p>
 		<div class="border-2 border-neutral-200 rounded-sm">
 			<Image src={doorkeeper} alt="doorkeeperの画像" />
@@ -57,6 +61,7 @@ const entris = await getCollection("blog");
 							entryB.data.date.getTime() -
 							entryA.data.date.getTime(),
 					)
+					.filter((entry) => !entry.data.draft)
 					.slice(0, 5)
 					.map((entry) => (
 						<a
