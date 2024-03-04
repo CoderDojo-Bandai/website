@@ -18,6 +18,7 @@ const entris = await getCollection("blog");
                             entryB.data.date.getTime() -
                             entryA.data.date.getTime(),
                     )
+                    .filter((entry) => !entry.data.draft)
                     .map((entry) => (
                         <a
                             href={`/blog/${entry.slug}`}
